@@ -1,4 +1,5 @@
 const cardsEl = document.querySelector(".cards");
+const createPage = document.querySelector(".country-info");
 
 export const createCountries = (countries) => {
   cardsEl.innerHTML = "";
@@ -25,8 +26,6 @@ export const createCountries = (countries) => {
   });
 };
 
-const countryInfoEl = document.querySelector(".country-info");
-
 export const createCountryInfo = (country) => {
   const {
     population,
@@ -43,7 +42,9 @@ export const createCountryInfo = (country) => {
   const nativeName = Object.values(name.nativeName)[0].official;
   const currency = Object.values(currencies)[0].name;
   const language = Object.values(languages);
-  countryInfoEl.innerHTML = `
+  const div = document.createElement("div");
+  div.classList.add('country-info')
+  div.innerHTML = `
 <img
     class="country-info__img"
     src="${flags.svg}"
@@ -103,4 +104,5 @@ export const createCountryInfo = (country) => {
     </div>
   </div>
 `;
+createPage.appendChild(div)
 };
