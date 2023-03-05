@@ -11,7 +11,6 @@ const request = async (recourse) =>{
 
     const data = await req.json()
     loaderToggle(false)
-
     return data
 }
 export default request
